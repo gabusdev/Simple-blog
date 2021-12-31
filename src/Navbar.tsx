@@ -9,16 +9,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
       <a className='links' href='/'>
         Home
       </a>
-      <a
-        href='/new'
-        style={{
-          color: "white",
-          backgroundColor: "#f1356d",
-          borderRadius: "8px",
-        }}
-      >
-        New
-      </a>
+      <a href='/new'>New Blog</a>
     </nav>
   );
 };
