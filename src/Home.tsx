@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 interface HomeProps {}
@@ -23,7 +23,6 @@ const Home: FunctionComponent<HomeProps> = () => {
       author: "luigi",
       id: "3",
     },
-    { title: "Best Blog Ever", body: "Lorem ipsum", author: "mario", id: "4" },
   ]);
 
   const handleDelete = (id: string) => {
@@ -31,14 +30,15 @@ const Home: FunctionComponent<HomeProps> = () => {
     setBlogs(newBlogs);
   };
 
+  useEffect(() => {
+    // Se ejecuta cada vez q cambia el state o cuando se renderiza algo
+    console.log("use effect ran");
+    // Se puede crear un buen loop con esto al modificar aqui mismo es state
+  });
+
   return (
     <div className='home'>
       <BlogList blogs={blogs} title='All Blogs!' handleDelete={handleDelete} />
-      <BlogList
-        blogs={blogs.filter((blog) => blog.author === "mario")}
-        title="Mario's"
-        handleDelete={handleDelete}
-      />
     </div>
   );
 };
