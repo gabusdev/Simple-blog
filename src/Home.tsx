@@ -24,6 +24,7 @@ const Home: FunctionComponent<HomeProps> = () => {
       id: "3",
     },
   ]);
+  const [name, setName] = useState("mario"); // Se crea para probar la funcion del Array de States a tener en cuenta con el useEffect
 
   const handleDelete = (id: string) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
@@ -34,11 +35,15 @@ const Home: FunctionComponent<HomeProps> = () => {
     // Se ejecuta cada vez q cambia el state o cuando se renderiza algo
     console.log("use effect ran");
     // Se puede crear un buen loop con esto al modificar aqui mismo es state
-  });
+  }, [name]); // Al agregar un Array como segundo parametro a la funcion useEffect solo se ejecutara al primer rendering de la pagina
+  // y cuando se cambie el valor del State que se especifique
 
   return (
     <div className='home'>
       <BlogList blogs={blogs} title='All Blogs!' handleDelete={handleDelete} />
+      <button onClick={() => setName("luigi")}>Change name</button>{" "}
+      {/*Solo aqui se realiza un cambio q percibe el useEffect*/}
+      <p>{name}</p>
     </div>
   );
 };
