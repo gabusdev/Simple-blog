@@ -7,11 +7,6 @@ interface HomeProps {}
 const Home: FunctionComponent<HomeProps> = () => {
   const [blogs, setBlogs] = useState<BlogModel[]>([]);
 
-  const handleDelete = (id: string) => {
-    const newBlogs = blogs.filter((blog) => blog.id !== id);
-    setBlogs(newBlogs);
-  };
-
   useEffect(() => {
     fetch("https://localhost:7275/blogs")
       .then((res) => {
@@ -25,7 +20,7 @@ const Home: FunctionComponent<HomeProps> = () => {
 
   return (
     <div className='home'>
-      <BlogList blogs={blogs} title='All Blogs!' handleDelete={handleDelete} />
+      <BlogList blogs={blogs} title='All Blogs!' />
     </div>
   );
 };
