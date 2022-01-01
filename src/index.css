@@ -4,6 +4,9 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(122, 122, 122);
 }
+.blog-list h2 {
+  color: rgba(48, 48, 48, 0.911);
+}
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
