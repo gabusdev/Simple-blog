@@ -1,10 +1,8 @@
 import { FunctionComponent } from "react";
+import { BlogModel } from "./Types";
 
 interface BlogProps {
-  id: string;
-  title: string;
-  author: string;
-  body: string;
+  blog: BlogModel;
   handleDelete: Function;
 }
 
@@ -12,19 +10,14 @@ interface BlogProps {
 // la declaracion de la constante blog
 // y llamar los valores desde ese objeto blog
 // const Blog: FunctionComponent<BlogProps> = (props) => {
-const Blog: FunctionComponent<BlogProps> = ({
-  id,
-  title,
-  author,
-  handleDelete,
-}) => {
+const Blog: FunctionComponent<BlogProps> = ({ blog, handleDelete }) => {
   // const blog = props;
 
   return (
-    <div className='blog-preview' key={id}>
-      <h3>{title} </h3>
-      <p>Written by {author}</p>
-      <button onClick={() => handleDelete(id)}>delete blog</button>
+    <div className='blog-preview' key={blog.id}>
+      <h3>{blog.title} </h3>
+      <p>Written by {blog.author}</p>
+      <button onClick={() => handleDelete(blog.id)}>delete blog</button>
     </div>
   );
 };

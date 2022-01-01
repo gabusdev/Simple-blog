@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
 import Blog from "./Blog";
+import { BlogModel } from "./Types";
 
 interface BlogListProps {
-  blogs: Array<any>;
+  blogs: BlogModel[];
   title: string;
   handleDelete: Function;
 }
@@ -18,13 +19,7 @@ const BlogList: FunctionComponent<BlogListProps> = ({
     <div className='blog-list'>
       <h2>{title}</h2>
       {blogs.map((blog) => (
-        <Blog
-          id={blog.id}
-          title={blog.title}
-          author={blog.author}
-          body={blog.body}
-          handleDelete={handleDelete}
-        />
+        <Blog blog={blog} handleDelete={handleDelete} />
       ))}
     </div>
   );
