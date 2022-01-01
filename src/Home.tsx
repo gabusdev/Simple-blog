@@ -1,4 +1,5 @@
 import { FunctionComponent, useState } from "react";
+import BlogList from "./BlogList";
 
 interface HomeProps {}
 
@@ -16,12 +17,7 @@ const Home: FunctionComponent<HomeProps> = () => {
 
   return (
     <div className='home'>
-      {blogs.map((blog) => (
-        <div className='blog-preview' key={blog.id}>
-          <h3>{blog.title} </h3>
-          <p>Written by {blog.author}</p>
-        </div>
-      ))}
+      <BlogList blogs={blogs} />
     </div>
   );
 };
