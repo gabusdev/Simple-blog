@@ -4,9 +4,14 @@ import Blog from "./Blog";
 interface BlogListProps {
   blogs: Array<any>;
   title: string;
+  handleDelete: Function;
 }
 
-const BlogList: FunctionComponent<BlogListProps> = ({ blogs, title }) => {
+const BlogList: FunctionComponent<BlogListProps> = ({
+  blogs,
+  title,
+  handleDelete,
+}) => {
   // const blogs = props.blogs; // Se puede usar asi llamando al parametro prop o como lo hice ahora
 
   return (
@@ -18,6 +23,7 @@ const BlogList: FunctionComponent<BlogListProps> = ({ blogs, title }) => {
           title={blog.title}
           author={blog.author}
           body={blog.body}
+          handleDelete={handleDelete}
         />
       ))}
     </div>
