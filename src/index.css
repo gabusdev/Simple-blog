@@ -14,7 +14,7 @@
 }
 .blog-preview h3 {
   font-size: 20px;
-  color: #f1356d;
+  color: #ee4a7b;
   margin-bottom: 8px;
 }
 .content {
@@ -30,10 +30,10 @@
   margin: 0 auto;
   margin-bottom: 40px;
   border-bottom: 1px solid #f2f2f2;
-  background-color: #333;
+  background-color: rgb(255, 255, 255);
 }
 .navbar h1 {
-  color: #ebebeb;
+  color: #ee4a7b;
 }
 .navbar .links {
   margin-left: auto;
