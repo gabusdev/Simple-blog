@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { BlogModel } from "./Types";
 
-export const useFetch = (url: string) => {
-  const [data, setBlogs] = useState<BlogModel[]>([]);
+export function useFetch<T>(url: string) {
+  const [data, setBlogs] = useState<T>();
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState<string>();
 
@@ -32,8 +31,7 @@ export const useFetch = (url: string) => {
         });
     }, 500);
     return () => abortCont.abort();
-    // console.log("use effect ran");
   }, [url]);
 
   return { data, error, isPending };
-};
+}

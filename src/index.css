@@ -4,6 +4,17 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(122, 122, 122);
 }
+.blog-details h2 {
+  font-size: 20px;
+  color: #ee4a7b;
+  margin-bottom: 10px;
+}
+.blog-details i {
+  color: rgba(32, 32, 32, 0.829);
+}
+.blog-details div {
+  margin: 20px;
+}
 .blog-list h2 {
   color: rgba(48, 48, 48, 0.911);
 }
@@ -36,7 +47,7 @@
   margin: 0 auto;
   margin-bottom: 40px;
   border-bottom: 1px solid #f2f2f2;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(51, 51, 51, 0.884);
 }
 .navbar h1 {
   color: #ee4a7b;
