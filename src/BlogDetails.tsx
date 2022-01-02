@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BlogModel } from "./Types";
 import { useFetch } from "./useFetch";
 
@@ -11,6 +11,15 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = () => {
     error,
     isPending,
   } = useFetch<BlogModel>(`https://localhost:7275/blogs/${id}`);
+  const navigate = useNavigate();
+
+  const handleDelete = () => {
+    fetch("https://localhost:7275/blogs/" + blog?.id, {
+      method: "DELETE",
+    }).then(() => {
+      navigate("/");
+    });
+  };
 
   return (
     <div className='blog-details'>
@@ -24,6 +33,7 @@ const BlogDetails: FunctionComponent<BlogDetailsProps> = () => {
           </p>
           <hr />
           <div>{blog.body}</div>
+          <button onClick={handleDelete}>delete</button>
         </article>
       )}
     </div>
