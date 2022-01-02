@@ -9,7 +9,7 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
       <a className='links' href='/'>
         Home
       </a>
-      <a href='/new'>New Blog</a>
+      <a href='/create'>New Blog</a>
     </nav>
   );
 };

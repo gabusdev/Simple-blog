@@ -25,7 +25,7 @@ export const useFetch = (url: string) => {
           setError(err.message);
           setIsPending(false);
         });
-    }, 1000);
+    }, 500);
     // console.log("use effect ran");
   }, [url]);
 
