@@ -13,7 +13,7 @@ const Blog: FunctionComponent<BlogProps> = ({ blog }) => {
   // const blog = props;
 
   return (
-    <div className='blog-preview' key={blog.id}>
+    <div className='blog-preview'>
       <h3>{blog.title} </h3>
       <p>Written by {blog.author}</p>
     </div>
