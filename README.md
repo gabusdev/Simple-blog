@@ -1,4 +1,4 @@
-# Simple-Blog
+# Simple-Blog-React
 
 ## Descripcion
 - Esta app de pruebas muestra un Blog al cual se añaden posts.    
