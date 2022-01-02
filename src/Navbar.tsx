@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FunctionComponent } from "react";
 
 interface NavbarProps {}
@@ -6,10 +7,10 @@ const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <nav className='navbar'>
       <h1>The Big Tuto Blog</h1>
-      <a className='links' href='/'>
+      <Link className='links' to='/'>
         Home
-      </a>
-      <a href='/create'>New Blog</a>
+      </Link>
+      <Link to='/create'>New Blog</Link>
     </nav>
   );
 };
