@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { Link } from "react-router-dom";
 import { BlogModel } from "./Types";
 
 interface BlogProps {
@@ -14,8 +15,10 @@ const Blog: FunctionComponent<BlogProps> = ({ blog }) => {
 
   return (
     <div className='blog-preview'>
-      <h3>{blog.title} </h3>
-      <p>Written by {blog.author}</p>
+      <Link to={`/blog/${blog.id}`}>
+        <h3>{blog.title} </h3>
+        <p>Written by {blog.author}</p>
+      </Link>
     </div>
   );
 };

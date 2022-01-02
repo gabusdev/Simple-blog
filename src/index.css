@@ -15,6 +15,9 @@
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
+.blog-preview a {
+  text-decoration: none;
+}
 .blog-preview h3 {
   font-size: 20px;
   color: #ee4a7b;

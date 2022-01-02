@@ -1,10 +1,8 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import "./App.css";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Create from "./Create";
+import BlogDetails from "./BlogDetails";
 
 function App() {
   return (
@@ -15,6 +13,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/create' element={<Create />} />
+            <Route path='/blog/:id' element={<BlogDetails />}></Route>
           </Routes>
         </div>
       </div>
